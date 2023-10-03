@@ -4,16 +4,19 @@
 
 void enqueue(int);
 void deque();
-void peek();
+void frontElement();
+void rearElement();
+int size();
 
 int arr[50], n=50, front = -1, rear = -1;
 
 void main()
 {
-	int choice, num;
+	int choice, num, n;
 	do
 	{
-		printf("Enter the choice 1 to Enqueue, 2 to Dequeue, 3 to peek and 0 to exit :");
+		printf("Enter the choice 1 to Enqueue, 2 to Dequeue, 3 to front element, ");
+		printf("4 to rear element and 0 to exit :");
 		scanf("%d",&choice)	;
 		switch(choice)
 		{
@@ -21,14 +24,26 @@ void main()
 				printf("Enter the element to push :");
 				scanf("%d",&num);
 				enqueue(num);
+				n = size();
+				printf("size :%d\n",n);
 				break;
 				
 			case 2:
 				deque();
+				n = size();
+				printf("size :%d\n",n);
 				break;
 			
 			case 3 :
-				peek();
+				frontElement();
+				n = size();
+				printf("size :%d\n",n);
+				break;
+
+			case 4 :
+				rearElement();
+				n = size();
+				printf("size :%d\n",n);
 				break;
 			
 			default :
@@ -72,7 +87,7 @@ void deque()
 	}
 }
 
-void peek()
+void frontElement()
 {
 	// fetch element in the front
 	if(front > rear || front == -1)
@@ -82,5 +97,31 @@ void peek()
 	else
 	{
 		printf("%d\n",arr[front]);
+	}
+}
+
+void rearElement()
+{
+	if(rear == -1 || front > rear)
+	{
+		printf("Queue empty!\n");
+	}
+	else
+	{
+		printf("%d\n",arr[rear]);
+	}
+}
+
+int size()
+{
+	if(rear == -1 || front > rear)
+		return 0;
+	else
+	{
+		int count=0;
+		for(int temp = front;temp <= rear;temp++)
+			count++;
+
+		return count;
 	}
 }
