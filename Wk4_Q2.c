@@ -77,7 +77,7 @@ void partition(int x)
 		{
 			tempPrev = temp;
 			temp = temp->next;
-			if(temp->a == x)
+			if(temp->a >= x)
 				flag = 1;
 			if(temp->a < x && flag==1)
 			{

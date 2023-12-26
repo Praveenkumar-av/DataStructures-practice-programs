@@ -56,6 +56,31 @@ void main()
 	display(list2);
 }
 
+void insertAlternate()
+{
+	if(list1 == NULL)
+	{
+		printf("\nList 1 is empty\n");
+	}
+	else if(list2 == NULL)
+	{
+		printf("\nList 2 is empty\n");
+	}
+	else
+	{
+		struct Node *temp1;
+		temp1 = list1;
+		while(temp1 != NULL && list2 != NULL)
+		{
+			temp = temp1->next;
+			temp1->next = list2;
+			list2 = list2->next;
+			temp1->next->next = temp;
+			temp1 = temp;
+		}
+	}
+}
+
 struct Node *create()
 {
 	struct Node *n = (struct Node *)malloc(sizeof(struct Node));
@@ -79,31 +104,6 @@ void addList(struct Node **headAddr,int num)
 		}
 		temp->next = create();
 		temp->next->a = num;
-	}
-}
-
-void insertAlternate()
-{
-	if(list1 == NULL)
-	{
-		printf("\nList 1 is empty\n");
-	}
-	else if(list2 == NULL)
-	{
-		printf("\nList 2 is empty\n");
-	}
-	else
-	{
-		struct Node *temp1;
-		temp1 = list1;
-		while(temp1 != NULL && list2 != NULL)
-		{
-			temp = temp1->next;
-			temp1->next = list2;
-			list2 = list2->next;
-			temp1->next->next = temp;
-			temp1 = temp;
-		}
 	}
 }
 

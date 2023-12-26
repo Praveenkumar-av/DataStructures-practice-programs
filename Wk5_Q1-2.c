@@ -83,7 +83,7 @@ void removeNode(int M,int N)
 		{
 			for(j=1;j<=M;j++)
 			{
-					temp = temp->next;
+				temp = temp->next;
 			}
 			for(j=1;j<=N;j++)
 			{

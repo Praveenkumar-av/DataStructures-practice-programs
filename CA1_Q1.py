@@ -41,7 +41,7 @@ class Stack :
             #     self.result.append(-1)
             if x < self.minval :
                 self.minval = (2*self.minval) - x
-                self.result.append(self.minval)
+                self.result.append(self.x)
             else :
                 self.result.append(x)
 
