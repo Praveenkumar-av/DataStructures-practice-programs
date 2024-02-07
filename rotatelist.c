@@ -62,6 +62,7 @@ void rotate(int k)
     temp->next = NULL;
 
     // by moving node to last node
+	
     // for(i=0;i<k;i++)
     // {
     //     temp->next = head;

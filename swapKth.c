@@ -1,6 +1,6 @@
 // Given a singly linked list, swap kth node from the beginning with kth node from the
 // end, Write a program to perTorm swap operation using pointers, For instance when
-// Linked List is: 12345678 and k-2, output is 87234521  when k-3, output is 87645321
+// Linked List is: 12345678 and k=2, output is 87234521  when k=3, output is 87645321
 
 #include<stdio.h>
 #include<stdlib.h>
