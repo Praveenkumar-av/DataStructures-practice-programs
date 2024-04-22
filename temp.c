@@ -1,95 +1,17 @@
 #include<stdio.h>
 
-int arr[50], n = 50, top = -1, min;
+int f(int x, int y)
+{
+	int delta = x - y;
 
-void push(int);
-void pop();
-void getMin();
+	if (y > delta)
+		return 2 * ((y - delta) / 3) + delta;
+	else
+		return delta - 2 * ((delta - y) / 4);
+}
 
 void main()
 {
-	int choice, num;
-	do
-	{
-		printf("Enter 1 to push, 2 to pop, 3 to getMin and 0 to exit :");
-		scanf("%d",&choice);
-		switch(choice)
-		{
-			case 1:
-				printf("Enter the element to push :");
-				scanf("%d",&num);
-				push(num);
-				break;
-				
-			case 2:
-				pop();
-				break;
-				
-			case 3:
-				getMin();
-				break;
-			
-			default :
-				if(choice != 0)
-					printf("Invalid choice!\n");
-		}
-	}while(choice != 0);
-}
-
-void push(int value)  
-{
-	// function to insert the element at the top of the stack
-    if(top >= n-1)
-        printf("Stack full!");
-	else if(top == -1)
-    {
-        top++;
-        arr[top] = value;
-        min = value;
-    }
-    else if(value >= min)
-    {
-        top++;
-        arr[top] = value;
-    }
-    else 
-    {
-        top++;
-        arr[top] = (2*value)-min;
-        min = value;
-    }
-}
-
-void pop()
-{
-    if(top == -1)
-    {
-        printf("Stack empty!\n");
-    }
-    else
-    {
-        int value = arr[top];
-        top--;
-        if(value >= min)
-        {
-            printf("%d\n",value);
-        }
-        else 
-        {
-            min = (2*min)-value;
-            printf("%d\n",(value+min)/2);
-        }
-    }
-}
-
-void getMin()
-{
-    if(top == -1)
-    {
-        printf("Stack empty!\n");
-    }
-    else
-    {
-        printf("%d\n",min);
-    }
+	int result = f(2,4);
+	printf("%d",result);
 }
