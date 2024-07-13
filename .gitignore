@@ -4,3 +4,9 @@
 tempCodeRunnerFile.c
 tempCodeRunnerFile.py
 *.class
+out
+.idea/.gitignore
+.idea/modules.xml
+.idea/misc.xml
+.idea/vcs.xml
+DataStructures-practice-programs.iml
